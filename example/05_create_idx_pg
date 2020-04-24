@@ -1,0 +1,3 @@
+CREATE INDEX CONCURRENTLY  carts_user_id ON carts (
+user_id)
+WITH (FILLFACTOR = 95)
