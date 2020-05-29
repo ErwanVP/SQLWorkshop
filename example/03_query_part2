@@ -1,4 +1,4 @@
-WITH 
+EXPLAIN (ANALYZE, VERBOSE)  WITH 
  stats_items AS (
      SELECT count(*) as total_items,cart_id
     	FROM cart_items  
@@ -9,7 +9,7 @@ WITH
     	FROM cart_items  
 	 GROUP BY cart_id
  )
- SELECT * FROM carts c
+ SELECT i.total_items, p.total_price, p.cart_id FROM carts c
  INNER JOIN stats_items i on c.id = i.cart_id
  INNER JOIN stats_Price p on c.id = p.cart_id
- where c.user_id = 1
+ where c.user_id = 53069

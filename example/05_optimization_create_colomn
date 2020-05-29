@@ -1,0 +1,15 @@
+ALTER TABLE carts 
+    ADD COLUMN total_items INT NOT NULL DEFAULT 0,
+    ADD COLUMN total_price INT NOT NULL DEFAULT 0
+;
+
+ALTER TABLE carts 
+ALTER COLUMN total_items 
+DROP DEFAULT;
+
+ALTER TABLE carts 
+ALTER COLUMN total_price 
+DROP DEFAULT;
+
+
+
