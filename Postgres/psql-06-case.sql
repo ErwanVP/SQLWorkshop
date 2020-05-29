@@ -1,8 +1,8 @@
 insert into trans
-select 10 , 'OK';
+select 100 , 'OK';
 
 insert into trans
-select 11 , 'ok';
+select 110 , 'ok';
 
 
 SELECT * from trans

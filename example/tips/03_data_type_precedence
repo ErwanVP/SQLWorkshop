@@ -1,0 +1,13 @@
+CREATE TABLE test_data_precedence_char ( id int , char_data CHAR(50))
+
+CREATE TABLE test_data_precedence_vchar ( id int , vchar_data VARCHAR(50))
+
+
+SELECT * FROM carts pc
+INNER JOIN test_data_precedence_char dc ON PC.name = dc.char_data;
+
+SELECT * FROM carts pc
+INNER JOIN test_data_precedence_vchar vc ON PC.name = vc.vchar_data
+
+SELECT * FROM carts pc
+INNER JOIN test_data_precedence_char dc ON PC.name = cast (dc.char_data as VARCHAR(50));

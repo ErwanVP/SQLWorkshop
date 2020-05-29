@@ -21,5 +21,5 @@ CREATE TABLE cart_items (
     created_at datetimeoffset  NOT NULL,
     updated_at datetimeoffset,
     CONSTRAINT pk_cart_items PRIMARY KEY (cart_id,cart_item),
-    FOREIGN KEY (cart_id) REFERENCES carts (id)
+    CONSTRAINT fkpk_cart_items_cart_id FOREIGN KEY (cart_id) REFERENCES carts (id)
 );

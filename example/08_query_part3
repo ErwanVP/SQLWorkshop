@@ -1,0 +1,3 @@
+EXPLAIN (ANALYZE, VERBOSE)  
+ SELECT total_items, total_price, p.cart_id FROM carts c
+ where c.user_id = 53069

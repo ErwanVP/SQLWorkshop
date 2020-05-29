@@ -1,0 +1,33 @@
+SELECT * FROM carts 
+ where id = 183047
+ limit (100);
+ 
+CREATE INDEX CONCURRENTLY  carts_updated_at ON carts (
+updated_at)
+WITH (FILLFACTOR = 95);
+
+analyse
+
+-- date case 
+SELECT * FROM  carts
+where updated_at = '2019-09-01 06:43:00';
+
+SELECT * FROM  carts
+where date_part('year', updated_at)  = '2019';
+
+SELECT * FROM  carts
+where  updated_at > '2019-12-31'
+and  updated_at < '2020-01-01';
+
+-- is null case
+
+SELECT * FROM  carts
+where id = 23 and
+COALESCE(name, 'test')  = '2019';
+
+SELECT * FROM  carts
+where ((name = 'test') 
+ OR (name IS NULL))
+
+
+

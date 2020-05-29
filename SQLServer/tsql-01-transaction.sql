@@ -1,6 +1,7 @@
 CREATE TABLE trans (
     id INT , 
-    comment VARCHAR(50)
+    comment VARCHAR(50),
+    CONSTRAINT PK_trans_id PRIMARY KEY (id)
 );
 
 GO
@@ -18,9 +19,3 @@ COMMIT;
 GO 
 
 SELECT * FROM trans;
-
-
-GO 
-
-
-DROP TABLE trans ;

@@ -1,7 +1,7 @@
 
 BEGIN TRANSACTION;
  UPDATE trans
- set comment = 'ok'
+ set comment = 'Hello'
  where id = 1;
 
  COMMIT

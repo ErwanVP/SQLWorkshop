@@ -1,0 +1,25 @@
+SELECT * FROM carts 
+ where id = 183047
+ limit (100);
+ 
+CREATE INDEX CONCURRENTLY  carts_name ON carts (
+name)
+WITH (FILLFACTOR = 95)
+
+analyse
+
+
+SELECT * from carts
+ where name = 'name_417391_417391_417391_417391_417391_417391';
+ 
+SELECT * from carts
+ where name like 'name_417391_417391_417391_417391_417391_417391';
+ 
+SELECT * from carts
+ where name like 'name_417391%';
+ 
+SELECT * from carts
+ where name like '%name_417391';
+ 
+SELECT * from carts
+ where name like '%name_417391%';
