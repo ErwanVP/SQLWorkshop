@@ -10,7 +10,9 @@ CREATE TABLE carts (
     created_at datetimeoffset CONSTRAINT df_carts_created_at DEFAULT GETUTCDATE(),
     updated_at datetimeoffset,
     CONSTRAINT pk_carts PRIMARY KEY (id)
-);
+    --ON filegroup,
+) 
+--ON filegroup;
 
 CREATE TABLE cart_items (
     cart_id int, 
@@ -21,6 +23,9 @@ CREATE TABLE cart_items (
     price int, 
     created_at datetimeoffset CONSTRAINT df_carts_items_created_at DEFAULT GETUTCDATE() ,
     updated_at datetimeoffset,
-    CONSTRAINT pk_cart_items PRIMARY KEY (cart_id,cart_item),
+    CONSTRAINT pk_cart_items PRIMARY KEY (cart_id,cart_item)
+    --ON filegroup
+    ,
     CONSTRAINT fk_cart_items_cart_id FOREIGN KEY (cart_id) REFERENCES carts (id)
-);
+)
+--ON filegroup;
