@@ -1,7 +1,3 @@
-CREATE DATABASE cart
-GO
-USE cart
-GO
 
 CREATE TABLE carts (
     id int, 
@@ -13,6 +9,8 @@ CREATE TABLE carts (
     --ON filegroup,
 ) 
 --ON filegroup;
+
+GO
 
 CREATE TABLE cart_items (
     cart_id int, 

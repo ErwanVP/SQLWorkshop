@@ -1,6 +1,3 @@
-CREATE DATABASE cart ; 
-
-
 CREATE TABLE carts (
     id int, 
     user_id int NOT NULL,
@@ -20,5 +17,5 @@ CREATE TABLE cart_items (
     created_at TIMESTAMP CONSTRAINT df_carts_items_created_at DEFAULT now(),
     updated_at TIMESTAMP,
     CONSTRAINT pk_cart_items PRIMARY KEY (cart_id,cart_item),
-    FOREIGN KEY (cart_id) REFERENCES carts (id)
+    CONSTRAINT fk_cart_items_cart_id FOREIGN KEY (cart_id) REFERENCES carts (id)
 );
