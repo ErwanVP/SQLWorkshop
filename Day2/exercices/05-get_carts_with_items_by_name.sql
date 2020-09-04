@@ -5,7 +5,7 @@ article_id,
 article_name, 
 price, 
 ci.created_at, 
-ci.updated_at  FROM carts c
+ci.updated_at FROM carts c
 INNER JOIN cart_items ci ON c.id = ci.cart_id 
 WHERE 
-c.id in ('236227','2362230');
+name = 'name_407819_407819_407819_407819_4078' ;
