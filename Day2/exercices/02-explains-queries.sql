@@ -1,10 +1,10 @@
--- query 1
+-- query 1 Get a cart
 EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON)
 SELECT id, user_id, name, created_at, updated_at FROM carts
 WHERE
 id = '236227' ;
 
--- query 2
+-- query 2 Get cart with all items link
 EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON)
 SELECT cart_id, 
 cart_item, 
@@ -18,7 +18,7 @@ INNER JOIN cart_items ci ON c.id = ci.cart_id
 WHERE 
 c.id = '236227' ;
 
--- -- query 3
+-- -- query 3 Get carts with all items link by IDs
 EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON)
 SELECT cart_id, 
 cart_item, 
@@ -32,7 +32,7 @@ INNER JOIN cart_items ci ON c.id = ci.cart_id
 WHERE 
 c.id in ('236227','2362230');
 
--- query 4
+-- query 4 Get carts with all items link by cart.name
 EXPLAIN (ANALYZE, COSTS, VERBOSE, BUFFERS, FORMAT JSON)
 SELECT cart_id, 
 cart_item, 
