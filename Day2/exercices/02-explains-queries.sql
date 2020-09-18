@@ -69,8 +69,6 @@ name = 'name_407819_407819_407819_407819_4078' ;
 
 -- But I need the id
 
-DROP INDEX CONCURRENTLY carts_name;
-
 CREATE INDEX CONCURRENTLY carts_name ON carts (
 name) INCLUDE (id)
 WITH (FILLFACTOR = 90) 

@@ -1,0 +1,4 @@
+ALTER TABLE carts 
+    ADD COLUMN total_items INT NOT NULL DEFAULT 0,
+    ADD COLUMN total_price INT NOT NULL DEFAULT 0
+;
